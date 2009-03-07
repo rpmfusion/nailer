@@ -1,0 +1,52 @@
+Index: nailer.schemas
+===================================================================
+--- nailer.schemas	(wersja 6)
++++ nailer.schemas	(wersja 7)
+@@ -1180,8 +1180,8 @@
+         </schema>
+ 
+         <schema>
+-            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/enable</key>
+-            <applyto>/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/enable</applyto>
++            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/enable</key>
++            <applyto>/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/enable</applyto>
+             <owner>nailer</owner>
+             <type>bool</type>
+             <default>true</default>
+@@ -1193,8 +1193,8 @@
+ 
+ 
+         <schema>
+-            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/command</key>
+-            <applyto>/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/command</applyto>
++            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/command</key>
++            <applyto>/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/command</applyto>
+             <owner>nailer</owner>
+             <type>string</type>
+             <default>/usr/bin/nailer %i %o %s</default>
+Index: nailer.schemas.in
+===================================================================
+--- nailer.schemas.in	(wersja 6)
++++ nailer.schemas.in	(wersja 7)
+@@ -1180,8 +1180,8 @@
+         </schema>
+ 
+         <schema>
+-            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/enable</key>
+-            <applyto>/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/enable</applyto>
++            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/enable</key>
++            <applyto>/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/enable</applyto>
+             <owner>nailer</owner>
+             <type>bool</type>
+             <default>true</default>
+@@ -1193,8 +1193,8 @@
+ 
+ 
+         <schema>
+-            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/command</key>
+-            <applyto>/desktop/gnome/thumbnailers/video@x-theora+ogg@ogv/command</applyto>
++            <key>/schemas/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/command</key>
++            <applyto>/desktop/gnome/thumbnailers/video@x-theora-ogg@ogv/command</applyto>
+             <owner>nailer</owner>
+             <type>string</type>
+             <default>@prefix@/bin/nailer %i %o %s</default>
