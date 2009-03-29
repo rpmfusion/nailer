@@ -1,6 +1,6 @@
 Name:           nailer
 Version:        0.4.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 Group:          Applications/Multimedia
@@ -79,6 +79,9 @@ fi
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.4.3-4
+- rebuild for new F11 features
+
 * Sat Feb 28 2009 Julian Sikorski <belegdol[at]gmail[dot]com> - 0.4.3-3
 - Dropped the .desktop file entirely
 - Patched the gconf schema
