@@ -1,6 +1,6 @@
 Name:           nailer
 Version:        0.4.3
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 Group:          Applications/Multimedia
@@ -14,6 +14,8 @@ BuildRequires:  GConf2
 BuildRequires:  gtk2-devel
 Requires:       GConf2
 Requires:       mplayer
+#We need to conflict with totem until http://bugzilla.gnome.org/show_bug.cgi?id=497264 gets fixed
+Conflicts:      totem
 
 Requires(pre):  GConf2
 Requires(post): GConf2
@@ -79,6 +81,12 @@ fi
 
 
 %changelog
+* Fri May 08 2009 Julian Sikorski <belegdol[at]gmail[dot]com> - 0.4.3-5
+- Added Conflicts: totem for the time being
+
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 0.4.3-4
+- rebuild for new F11 features
+
 * Sat Feb 28 2009 Julian Sikorski <belegdol[at]gmail[dot]com> - 0.4.3-3
 - Dropped the .desktop file entirely
 - Patched the gconf schema
