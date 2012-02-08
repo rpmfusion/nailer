@@ -1,6 +1,6 @@
 Name:           nailer
 Version:        0.4.3
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 Group:          Applications/Multimedia
@@ -81,6 +81,9 @@ fi
 
 
 %changelog
+* Wed Feb 08 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.4.3-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Fri May 08 2009 Julian Sikorski <belegdol[at]gmail[dot]com> - 0.4.3-5
 - Added Conflicts: totem for the time being
 
