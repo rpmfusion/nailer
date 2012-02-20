@@ -1,6 +1,6 @@
 Name:           nailer
 Version:        0.4.3
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 License:        GPLv2+
@@ -67,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/thumbnailers
 
 
 %changelog
+* Mon Feb 20 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.4.3-8
+- Rebuilt for devel/F-17 inter-branch
+
 * Sat Feb 11 2012 Julian Sikorski <belegdol@fedoraproject.org> - 0.4.3-7
 - Fixed build failures
 - Dropped obsolete Group, Buildroot, %%clean and %%defattr
