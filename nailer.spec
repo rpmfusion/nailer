@@ -1,14 +1,11 @@
 Name:           nailer
-Version:        0.4.3
-Release:        5%{?dist}
+Version:        0.4.6
+Release:        1%{?dist}
 Summary:        A thumbnail generator using mplayer
 
-Group:          Applications/Multimedia
 License:        GPLv2+
 URL:            http://kdekorte.googlepages.com/nailer
 Source0:        http://mplayer-video-thumbnailer.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:         nailer-0.4.3-gconf.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  GConf2
 BuildRequires:  gtk2-devel
@@ -28,7 +25,6 @@ generate thumbnails of video media files.
 
 %prep
 %setup -q
-%patch0 -p0 -b .gconf
 
 
 %build
@@ -47,40 +43,41 @@ rm -rf $RPM_BUILD_ROOT%{_docdir}
 #remove the desktop file
 rm -rf $RPM_BUILD_ROOT%{_datadir}/thumbnailers
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 
 %pre
-if [ "$1" -gt 1 ] ; then
-    export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-    gconftool-2 --makefile-uninstall-rule \
-      %{_sysconfdir}/gconf/schemas/nailer.schemas >/dev/null || :
-fi
+%gconf_schema_prepare
 
 
 %post
-export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-gconftool-2 --makefile-install-rule \
-  %{_sysconfdir}/gconf/schemas/nailer.schemas > /dev/null || :
+%gconf_schema_upgrade
 
 
 %preun
-if [ "$1" -eq 0 ] ; then
-    export GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source`
-    gconftool-2 --makefile-uninstall-rule \
-      %{_sysconfdir}/gconf/schemas/nailer.schemas > /dev/null || :
-fi
+%gconf_schema_remove
 
 
 %files
-%defattr(-,root,root,-)
 %doc COPYING ChangeLog
 %{_sysconfdir}/gconf/schemas/nailer.schemas
 %{_bindir}/nailer
 
 
 %changelog
+* Thu Oct 11 2012 Julian Sikorski <belegdol@fedoraproject.org> - 0.4.6-1
+- Updated to 0.4.6
+- Dropped included patches
+
+* Mon Feb 20 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.4.3-8
+- Rebuilt for devel/F-17 inter-branch
+
+* Sat Feb 11 2012 Julian Sikorski <belegdol@fedoraproject.org> - 0.4.3-7
+- Fixed build failures
+- Dropped obsolete Group, Buildroot, %%clean and %%defattr
+- Updated scriptlets to the latest spec
+
+* Wed Feb 08 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.4.3-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Fri May 08 2009 Julian Sikorski <belegdol[at]gmail[dot]com> - 0.4.3-5
 - Added Conflicts: totem for the time being
 
