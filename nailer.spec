@@ -1,13 +1,11 @@
 Name:           nailer
-Version:        0.4.3
-Release:        8%{?dist}
+Version:        0.4.6
+Release:        1%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 License:        GPLv2+
 URL:            http://kdekorte.googlepages.com/nailer
 Source0:        http://mplayer-video-thumbnailer.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:         %{name}-%{version}-gconf.patch
-Patch1:         %{name}-%{version}-glib.patch
 
 BuildRequires:  GConf2
 BuildRequires:  gtk2-devel
@@ -27,8 +25,6 @@ generate thumbnails of video media files.
 
 %prep
 %setup -q
-%patch0 -p0 -b .gconf
-%patch1 -p1 -b .glib
 
 
 %build
@@ -67,6 +63,10 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/thumbnailers
 
 
 %changelog
+* Thu Oct 11 2012 Julian Sikorski <belegdol@fedoraproject.org> - 0.4.6-1
+- Updated to 0.4.6
+- Dropped included patches
+
 * Mon Feb 20 2012 Nicolas Chauvet <kwizart@gmail.com> - 0.4.3-8
 - Rebuilt for devel/F-17 inter-branch
 
