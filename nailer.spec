@@ -1,6 +1,6 @@
 Name:           nailer
 Version:        0.4.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A thumbnail generator using mplayer
 
 License:        GPLv2+
@@ -63,6 +63,9 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/thumbnailers
 
 
 %changelog
+* Sun Aug 31 2014 Sérgio Basto <sergio@serjux.com> - 0.4.6-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Mon May 27 2013 Nicolas Chauvet <kwizart@gmail.com> - 0.4.6-2
 - Rebuilt for x264/FFmpeg
 
